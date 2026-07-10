@@ -1,275 +1,1639 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mega Menu</title>
+:root {
+    --primary-bg: #111b39;
+    --secondary-bg: #1d2340;
+    --card-bg: #232845;
+    --footer-bg: #0a1026;
+    --gold: #d4a63f;
+    --white: #ffffff;
+    --text-light: rgba(255, 255, 255, .82);
+    --border: rgba(255, 255, 255, .16);
+    --header-height: 116px;
+    --page-padding: clamp(20px, 6vw, 84px);
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-<body>
+html {
+    scroll-behavior: smooth;
+}
 
-    <header>
-        <nav class="navbar">
+body {
+    min-width: 320px;
+    overflow-x: hidden;
+    background: var(--primary-bg);
+    color: var(--white);
+    font-family: Perpetua, "Times New Roman", serif;
+}
 
-            <a href="#" class="logo">
-                <img src="https://assets.cdn.filesafe.space/RAy1FldhpgdvIee2xIEt/media/6a219199da24932f120e011f.png"
-                     alt="Oliva Firme & Associates Law Firm"
-                     class="main-logo">
-            </a>
-            <div class="nav-wrapper">
-                <ul class="nav-links" id="navLinks">
-                    <li>
-                        <a href="#">ABOUT US</a>
-                        <div class="mega-menu mega-menu-about">
-                            <div class="mega-about-card">
-                                <span class="mega-about-label"><h3>ABOUT THE FIRM</h3></span>
-                                </br>
+    body.nav-open {
+        overflow: hidden;
+    }
 
+img {
+    display: block;
+    max-width: 100%;
+}
 
+button,
+a,
+summary {
+    -webkit-tap-highlight-color: transparent;
+}
 
-                                <P>
-                                    OLIVA FIRME & ASSOCIATES LAW FIRM was formed in June 2008 after Atty. Rommel V. Oliva and Justice Nesauro H. Firme formalized their law partnership which started since June 2004.
-                                </P>
-                                </br>
-                                <P>
-                                    Atty. Oliva is a graduate of University of Santo Tomas Faculty of Civil Law in 1997 and has worked both in government
-                                    offices and in other law firms before he decided to put up the Law Firm. Justice Firme on the other hand is likewise
-                                    a graduate of University of Santo Tomas Faculty of Civil Law in 2003 and right after hurdling the bar examination given
-                                    by the Supreme Court, he joined Atty. Oliva in the law office. In view of his recent appointment as a Regular Member of the
-                                    Judicial and Bar Council representing the Academe, he is currently on leave from the law firm.
-                                </P>
-                                </br>
+/* HEADER AND SHARED NAVIGATION */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background: rgba(17, 27, 57, .97);
+    border-bottom: 1px solid rgba(255, 255, 255, .09);
+    backdrop-filter: blur(12px);
+}
 
-                                <P>
-                                    Through years of legal practice, the Law Firm has rendered various legal services to our retaining clients by specializing in
-                                    corporate legal practice, which necessarily includes the drafting of contracts, rendition of legal opinion, actual handling of
-                                    all cases (labor, civil and criminal) of our clients, as well as attendance in board meetings.
-                                </P>
-                                </br>
+.navbar {
+    width: min(100%, 1440px);
+    min-height: var(--header-height);
+    margin: 0 auto;
+    padding: 12px var(--page-padding);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
 
-                                <P>
-                                    Since 2008, the Law Firm has gradually expanded in terms of the number of retaining clients as well as hiring associate lawyers.
-                                    Some of our long-time retaining clients are Hon. Secretary Benhur Abalos of DILG, Extra Excel International (Phils.), Inc.,
-                                    Allegro Resources Corporation, Counterflow Movers Inc., Hypro Construction and Development Corporation, Music Museum Group, Inc.,
-                                    Airtropolis Consolidators Phils. Inc., Mind Alliance Ventures, Inc. (owner of Memoxpress), Sahara Games and Amusement Phils. Corp.,
-                                    SOS Children’s Villages Inc., Skymed Pharma Distributor, Driven By Passion, Inc. (owner of Primadonna), Mr. Quickie, Inc. and among others.
-                                </P>
-                                </br>
+.logo {
+    position: relative;
+    z-index: 1002;
+    display: flex;
+    align-items: center;
+    flex: 0 0 auto;
+    text-decoration: none;
+}
 
-                                <P>
-                                    Meanwhile, the Law Firm has hired full time associate lawyers Elmar H. Malapitan (SSC-R), Pamela L. Faller (San Beda), Ahda B. Pajo (MLQU),
-                                    Lawrence Anthony Bautista (JRU), Thomas Alvin Morada (JRU), Darlene B. Bibat (JRU), and Elizabeth L. Robles (MLC) to meet the demands of the clients.
+.main-logo {
+    width: auto;
+    height: 88px;
+    object-fit: contain;
+    transition: transform .25s ease;
+}
 
-                                </P>
-                                </br>
+    .main-logo:hover {
+        transform: scale(1.025);
+    }
 
-                                <P>
-                                    The expansion of the Law Firm portrays the advocacy and desire of Atty. Oliva and Justice Firme to render quality legal service to its clients within the bounds of ethical measures.
+.nav-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
 
-                                </P>
-                                </br>
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(22px, 2.8vw, 44px);
+    list-style: none;
+}
 
+    .nav-links > li {
+        position: relative;
+    }
 
-                                <DIV CLASS="MEGA-ABOUT-HIGHLIGHT">
-                                    EXCEPTIONAL LEGAL REPRESENTATION GUIDED BY PROFESSIONALISM, ETHICS, AND LASTING CLIENT PARTNERSHIPS.
-                                </DIV>
-                            </div>
-                        </div>
-                    </li>
-                    <li>
-                        <a href="#">LAWYERS</a>
-                        <div class="mega-menu">
-                            <div class="mega-column">
-                                <h3>OUR TEAM</h3>
-                                <a href="Lawyers.html">LAWYERS</a>
-                            </div>
-                        </div>
-                    </li>
+        .nav-links > li > a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            color: var(--white);
+            text-decoration: none;
+            font-size: clamp(15px, 1.25vw, 18px);
+            line-height: 1.2;
+            white-space: nowrap;
+            transition: color .25s ease;
+        }
 
-                    <li>
-                        <a href="#">PRACTICES & CAPABILITIES</a>
-                        <div class="mega-menu">
-                            <div class="mega-column">
-                                <h3>Corporate</h3>
-                                <a href="#">Business Law</a>
-                                <a href="#">Mergers</a>
-                                <a href="#">Contracts</a>
-                            </div>
-                            <div class="mega-column">
-                                <h3>Litigation</h3>
-                                <a href="#">Civil Litigation</a>
-                                <a href="#">Commercial Disputes</a>
-                                <a href="#">Arbitration</a>
-                            </div>
-                            <div class="mega-column">
-                                <h3>Specialized</h3>
-                                <a href="#">Tax Law</a>
-                                <a href="#">IP Law</a>
-                                <a href="#">Data Privacy</a>
-                            </div>
-                        </div>
-                    </li>
+            .nav-links > li > a:hover,
+            .nav-links > li > a:focus-visible,
+            .nav-links > li.is-open > a {
+                color: var(--gold);
+            }
 
-                    <li>
-                        <a href="#" class="contact-btn" id="openContactModal">
-                            Contact Us
-                        </a>
-                    </li>
-                </ul>
+.nav-dropdown-trigger::after {
+    content: "";
+    width: 7px;
+    height: 7px;
+    margin-left: 8px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+    transition: transform .25s ease;
+}
 
-                <span class="nav-indicator" id="navIndicator"></span>
-            </div>
+.has-mega-menu.is-open > .nav-dropdown-trigger::after {
+    transform: rotate(225deg) translate(-2px, -2px);
+}
 
-        </nav>
-    </header>
-    <section class="tagline-section">
-        <div class="tagline-content">
-            <h1>
-                YOUR TRUSTED LEGAL PARTNER,<br />
-                EVOLVING FOR THE FUTURE
-            </h1>
+.nav-indicator {
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    pointer-events: none;
+    background: var(--gold);
+    transition: left .25s ease, width .25s ease, opacity .25s ease;
+    opacity: 0;
+}
 
-            <p>
-                ADVISING BUSINESSES, RESOLVING CHALLENGES.<br />
-                BUILDING LASTING PARTNERSHIP.
-            </p>
-        </div>
-    </section>
-    <section class="industries-showcase">
-        <div class="industries-content">
-            <span class="eyebrow">Industries We Serve</span>
+.contact-btn {
+    min-height: 44px !important;
+    padding: 11px 22px !important;
+    justify-content: center;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    background: var(--gold);
+    color: var(--primary-bg) !important;
+    font-weight: 700;
+}
 
-            <h2>STRATEGIC LEGAL COUNSEL ACROSS KEY SECTORS</h2>
+    .contact-btn:hover,
+    .contact-btn:focus-visible {
+        background: var(--white);
+        border-color: var(--white);
+    }
 
-            <p>
-                We work with corporations, institutions, entrepreneurs, and organizations
-                across industries that require practical, responsive, and business-focused legal support.
-            </p>
-        </div>
+.nav-toggle {
+    display: none;
+    position: relative;
+    z-index: 1002;
+    width: 48px;
+    height: 48px;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: transparent;
+    cursor: pointer;
+}
 
-        <div class="industries-list">
-            <div class="industry-item">Corporate & Commercial</div>
-            <div class="industry-item">Real Estate & Property</div>
-            <div class="industry-item">Construction & Development</div>
-            <div class="industry-item">Logistics & Transportation</div>
-            <div class="industry-item">Healthcare & Pharmaceuticals</div>
-            <div class="industry-item">Retail & Consumer Business</div>
-            <div class="industry-item">Labor & Employment</div>
-            <div class="industry-item">Non-Profit Organizations</div>
-        </div>
-    </section>
-    <section class="faq-section">
-        <h2>FREQUENTLY ASKED QUESTIONS</h2>
+    .nav-toggle span {
+        display: block;
+        width: 100%;
+        height: 2px;
+        margin: 5px 0;
+        border-radius: 2px;
+        background: var(--white);
+        transition: transform .25s ease, opacity .25s ease;
+    }
 
-        <div class="faq-container">
-            <details class="faq-item" open>
-                <summary>DO YOU WORK AS OUTSIDE COUNSEL TO IN-HOUSE LEGAL TEAMS?</summary>
-                <p>
-                    YES. MANY OF OUR RELATIONSHIPS ARE WITH IN-HOUSE LEGAL AND RISK TEAMS THAT RELY ON LEXAXIS
-                    PARTNERS AS A STRATEGIC EXTENSION OF THEIR INTERNAL CAPABILITIES. WE TAILOR ENGAGEMENT MODELS
-                    TO YOUR TEAM’S STRENGTHS, PREFERRED WORKFLOWS, AND REPORTING STRUCTURES.
-                </p>
-            </details>
+    .nav-toggle.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
 
-            <details class="faq-item">
-                <summary>WHAT INDUSTRIES DOES OLIVA AND PARTNERS LAW FIRM FOCUS ON?</summary>
-                <p>
-                    WE PRIMARILY SUPPORT TECHNOLOGY, FINTECH, HEALTHCARE, AND DATA-INTENSIVE ENTERPRISES. OUR
-                    ATTORNEYS COMBINE SECTOR FLUENCY WITH DEEP EXPERIENCE IN CORPORATE, REGULATORY, AND DISPUTES
-                    WORK, ALLOWING US TO MOVE QUICKLY IN COMPLEX OR FAST-CHANGING ENVIRONMENTS.
-                </p>
-            </details>
+    .nav-toggle.is-active span:nth-child(2) {
+        opacity: 0;
+    }
 
-            <details class="faq-item">
-                <summary>CAN YOU SUPPORT MATTERS ACROSS MULTIPLE JURISDICTIONS?</summary>
-                <p>
-                    YES. OUR TEAM HAS LED MATTERS ACROSS NORTH AMERICA, EUROPE, AND KEY ASIA-PACIFIC MARKETS.
-                    WE COORDINATE CLOSELY WITH TRUSTED LOCAL COUNSEL WHERE NEEDED, WHILE MAINTAINING A SINGLE
-                    STRATEGIC VIEW FOR YOUR LEADERSHIP AND BOARD.
-                </p>
-            </details>
+    .nav-toggle.is-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
 
-            <details class="faq-item">
-                <summary>HOW DO YOU STRUCTURE FEES FOR ENTERPRISE ENGAGEMENTS?</summary>
-                <p>
-                    IN ADDITION TO TRADITIONAL HOURLY ARRANGEMENTS, WE FREQUENTLY PROPOSE ALTERNATIVE FEE STRUCTURES
-                    INCLUDING SCOPED PROJECT FEES, PORTFOLIOS, AND RETAINERS ALIGNED TO YOUR BUDGET, PREDICTABILITY
-                    NEEDS, AND INTERNAL APPROVAL PROCESSES.
-                </p>
-            </details>
-        </div>
-    </section>
-    <footer class="footer">
-        <div class="footer-container">
+/* MEGA MENUS */
+.mega-menu {
+    position: absolute;
+    top: calc(100% + 18px);
+    left: 50%;
+    z-index: 1001;
+    width: min(900px, calc(100vw - 40px));
+    padding: 32px;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: var(--secondary-bg);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, .42);
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translate(-50%, 14px);
+    transition: opacity .22s ease, visibility .22s ease, transform .22s ease;
+}
 
-            <div class="footer-column">
-                <h3 class="footer-logo">OLIVA & PARTNERS</h3>
+.has-mega-menu:hover > .mega-menu,
+.has-mega-menu:focus-within > .mega-menu,
+.has-mega-menu.is-open > .mega-menu {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translate(-50%, 0);
+}
 
-                <p>
-                    TRUSTED LEGAL ADVISORS DELIVERING STRATEGIC COUNSEL,
-                    INNOVATIVE SOLUTIONS, AND LONG-TERM PARTNERSHIPS FOR
-                    BUSINESSES AND INDIVIDUALS.
-                </p>
+.mega-menu::before {
+    content: "";
+    position: absolute;
+    top: -19px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+}
 
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
+.mega-menu-about {
+    width: min(1000px, calc(100vw - 40px));
+    max-height: min(70vh, 690px);
+    overflow-y: auto;
+    display: block;
+}
 
-            <div class="footer-column">
-                <h4>PRACTICE AREAS</h4>
+.mega-about-card p {
+    color: var(--text-light);
+    font-size: 16px;
+    line-height: 1.65;
+}
 
-                <ul>
-                    <li><a href="#">CORPORATE LAW</a></li>
-                    <li><a href="#">LITIGATION</a></li>
-                    <li><a href="#">TAX LAW</a></li>
-                    <li><a href="#">LABOR LAW</a></li>
-                    <li><a href="#">DATA PRIVACY</a></li>
-                </ul>
-            </div>
+.mega-about-card br {
+    display: none;
+}
 
-            <div class="footer-column">
-                <h4>QUICK LINKS</h4>
+.mega-about-card p + p {
+    margin-top: 16px;
+}
 
-                <ul>
-                    <li><a href="#">ABOUT US</a></li>
-                    <li><a href="#">OUR LAWYERS</a></li>
-                    <li><a href="#">INSIGHTS</a></li>
-                    <li><a href="#">FAQS</a></li>
-                    <li><a href="#">CONTACT US</a></li>
-                </ul>
-            </div>
+.mega-about-label,
+.mega-column h3 {
+    display: block;
+    margin-bottom: 14px;
+    color: var(--gold);
+    font-size: 21px;
+}
 
-              <div class="footer-column">
-        <h4>CONTACT INFORMATION</h4>
+.mega-about-highlight {
+    margin-top: 22px;
+    padding: 17px 19px;
+    border-left: 4px solid var(--gold);
+    background: rgba(255, 255, 255, .06);
+    color: var(--white);
+    line-height: 1.5;
+}
 
-        <ul class="contact-list">
-            <li>📍 MANDALUYONG CITY, METRO MANILA, PHILIPPINES</li>
-            <li>📞 (+632) 8535-9320</li>
-            <li>📞 (+632) 8535-9231</li>
-            <li>✉️ olivaandpartners@dof.law</li>
-            <li>🌐 www.dof.law</li>
-        </ul>
-    </div>
+.mega-column a {
+    display: block;
+    padding: 8px 0;
+    color: var(--text-light);
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+}
 
-        </div>
+    .mega-column a:hover,
+    .mega-column a:focus-visible {
+        color: var(--gold);
+        transform: translateX(5px);
+    }
 
-        <div class="footer-bottom">
-     <p>
-         © 2026 Oliva & Partners Law Firm. All Rights Reserved. |
-       This website is powered by
-         <a href="https://socexconsulting.com" target="_blank" class="footer-link">
-             SOCEX
-         </a>
-     </p>
- </div>
-    </footer>
+/* HOME PAGE */
+.tagline-section {
+    min-height: clamp(440px, 63vh, 640px);
+    padding: clamp(72px, 9vw, 130px) var(--page-padding);
+    display: flex;
+    align-items: center;
+}
 
-    <div id="contactModalContainer"></div>
-    <script src="script.js"></script>
-</body>
-</html>
+.tagline-content {
+    width: min(100%, 1200px);
+    margin: 0 auto;
+}
+
+    .tagline-content h1 {
+        max-width: 1050px;
+        color: var(--white);
+        font-size: clamp(46px, 6.2vw, 82px);
+        line-height: 1.12;
+        letter-spacing: -.02em;
+    }
+
+    .tagline-content p {
+        margin-top: 28px;
+        color: var(--gold);
+        font-size: clamp(20px, 2vw, 28px);
+        line-height: 1.55;
+        font-weight: 600;
+    }
+
+.industries-showcase {
+    padding: clamp(70px, 8vw, 110px) var(--page-padding);
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(420px, 1.1fr);
+    align-items: center;
+    gap: clamp(44px, 6vw, 80px);
+    background: #0f1833;
+}
+
+.industries-content .eyebrow {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.industries-content h2 {
+    margin: 15px 0 18px;
+    color: var(--white);
+    font-size: clamp(38px, 4.4vw, 58px);
+    line-height: 1.08;
+}
+
+.industries-content p {
+    max-width: 580px;
+    color: var(--text-light);
+    font-size: 18px;
+    line-height: 1.7;
+}
+
+.industries-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 15px;
+}
+
+.industry-item {
+    position: relative;
+    min-height: 78px;
+    padding: 23px 52px 23px 24px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: linear-gradient(135deg, var(--secondary-bg), var(--card-bg));
+    color: var(--white);
+    font-size: 19px;
+    transition: transform .28s ease, border-color .28s ease, box-shadow .28s ease;
+}
+
+    .industry-item::before {
+        content: "";
+        position: absolute;
+        inset: 0 auto 0 0;
+        width: 4px;
+        background: var(--gold);
+        transform: scaleY(0);
+        transform-origin: bottom;
+        transition: transform .28s ease;
+    }
+
+    .industry-item::after {
+        content: "→";
+        position: absolute;
+        right: 22px;
+        color: var(--gold);
+        opacity: .55;
+        transition: transform .28s ease, opacity .28s ease;
+    }
+
+    .industry-item:hover {
+        transform: translateY(-5px);
+        border-color: var(--gold);
+        box-shadow: 0 16px 40px rgba(0, 0, 0, .25);
+    }
+
+        .industry-item:hover::before {
+            transform: scaleY(1);
+        }
+
+        .industry-item:hover::after {
+            opacity: 1;
+            transform: translateX(4px);
+        }
+
+.faq-section {
+    padding: clamp(72px, 8vw, 110px) var(--page-padding);
+}
+
+    .faq-section > h2 {
+        margin-bottom: 44px;
+        text-align: center;
+        font-size: clamp(36px, 4.4vw, 54px);
+    }
+
+.faq-container {
+    width: min(100%, 1000px);
+    margin: 0 auto;
+}
+
+.faq-item {
+    margin-bottom: 15px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 11px;
+    background: var(--card-bg);
+}
+
+    .faq-item summary {
+        position: relative;
+        padding: 23px 62px 23px 24px;
+        list-style: none;
+        cursor: pointer;
+        color: var(--white);
+        font-size: 20px;
+        line-height: 1.35;
+    }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            top: 50%;
+            right: 25px;
+            color: var(--gold);
+            font-size: 28px;
+            transform: translateY(-50%);
+        }
+
+    .faq-item[open] summary::after {
+        content: "−";
+    }
+
+    .faq-item p {
+        padding: 24px;
+        border-top: 1px solid var(--border);
+        background: var(--secondary-bg);
+        color: var(--text-light);
+        font-size: 17px;
+        line-height: 1.75;
+    }
+
+/* LAWYERS PAGE */
+.lawyers-section {
+    padding: clamp(72px, 8vw, 120px) var(--page-padding);
+}
+
+.section-header {
+    width: min(100%, 800px);
+    margin: 0 auto 62px;
+    text-align: center;
+}
+
+    .section-header h2 {
+        margin-bottom: 12px;
+        color: var(--white);
+        font-size: clamp(40px, 5vw, 60px);
+    }
+
+    .section-header span {
+        display: block;
+        margin-bottom: 14px;
+        color: var(--gold);
+        letter-spacing: 3px;
+        font-size: 14px;
+    }
+
+    .section-header p {
+        color: var(--text-light);
+        font-size: 17px;
+        line-height: 1.65;
+    }
+
+.lawyers-grid {
+    width: min(100%, 1400px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(22px, 3vw, 36px);
+}
+
+.lawyer-card {
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, .09);
+    border-radius: 17px;
+    background: #1b2347;
+    transition: transform .32s ease, box-shadow .32s ease;
+}
+
+    .lawyer-card:hover,
+    .lawyer-card:focus-within {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 55px rgba(0, 0, 0, .34);
+    }
+
+.lawyer-image {
+    position: relative;
+    height: clamp(390px, 42vw, 560px);
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(180deg, #20284d 0%, #151d3c 100%);
+}
+
+    .lawyer-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center bottom;
+        transition: transform .35s ease;
+    }
+
+.lawyer-card:hover .lawyer-image img,
+.lawyer-card:focus-within .lawyer-image img {
+    transform: scale(1.025);
+}
+
+.lawyer-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(17, 27, 57, .84);
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+.lawyer-card:hover .lawyer-overlay,
+.lawyer-card:focus-within .lawyer-overlay {
+    opacity: 1;
+}
+
+.lawyer-overlay a {
+    padding: 12px 23px;
+    border: 1px solid var(--gold);
+    border-radius: 999px;
+    color: var(--white);
+    text-decoration: none;
+    transition: background .2s ease, color .2s ease;
+}
+
+    .lawyer-overlay a:hover,
+    .lawyer-overlay a:focus-visible {
+        background: var(--gold);
+        color: var(--primary-bg);
+    }
+
+.lawyer-content {
+    position: relative;
+    min-height: 118px;
+    padding: 25px;
+}
+
+    .lawyer-content::before {
+        content: "";
+        display: block;
+        width: 42px;
+        height: 2px;
+        margin-bottom: 14px;
+        background: var(--gold);
+        transition: width .32s ease;
+    }
+
+.lawyer-card:hover .lawyer-content::before,
+.lawyer-card:focus-within .lawyer-content::before {
+    width: 100%;
+}
+
+.lawyer-content h3 {
+    margin-bottom: 8px;
+    color: var(--white);
+    font-size: 24px;
+    line-height: 1.25;
+}
+
+.lawyer-content span {
+    color: var(--gold);
+    font-size: 15px;
+}
+
+body.animate-lawyers .lawyer-card.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+}
+
+    body.animate-lawyers .lawyer-card.reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+        transition: opacity .6s ease, transform .6s ease;
+    }
+
+/* FOOTER */
+.footer {
+    padding-top: 68px;
+    border-top: 3px solid var(--gold);
+    background: var(--footer-bg);
+}
+
+.footer-container {
+    width: min(100%, 1400px);
+    margin: 0 auto;
+    padding: 0 var(--page-padding);
+    display: grid;
+    grid-template-columns: 1.7fr 1fr 1fr 1.35fr;
+    gap: clamp(30px, 4vw, 54px);
+}
+
+.footer-column h3,
+.footer-column h4 {
+    margin-bottom: 19px;
+    color: var(--white);
+}
+
+.footer-logo {
+    font-size: 31px;
+}
+
+.footer-column p,
+.contact-list li {
+    color: rgba(255, 255, 255, .72);
+    line-height: 1.7;
+}
+
+.footer-column ul {
+    padding: 0;
+    list-style: none;
+}
+
+    .footer-column ul li {
+        margin-bottom: 11px;
+    }
+
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, .72);
+            text-decoration: none;
+            transition: color .2s ease, padding-left .2s ease;
+        }
+
+            .footer-column ul li a:hover,
+            .footer-column ul li a:focus-visible {
+                padding-left: 5px;
+                color: var(--gold);
+            }
+
+.footer-social {
+    margin-top: 24px;
+    display: flex;
+    gap: 11px;
+}
+
+    .footer-social a {
+        width: 42px;
+        height: 42px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        color: var(--white);
+        text-decoration: none;
+    }
+
+        .footer-social a:hover,
+        .footer-social a:focus-visible {
+            background: var(--gold);
+            color: var(--primary-bg);
+        }
+
+.footer-bottom {
+    margin-top: 56px;
+    padding: 24px var(--page-padding);
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    text-align: center;
+}
+
+    .footer-bottom p {
+        color: rgba(255, 255, 255, .6);
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+.footer-link {
+    color: var(--white);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+    .footer-link:hover {
+        text-decoration: underline;
+    }
+
+/* CONTACT MODAL */
+.contact-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    padding: 20px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, .72);
+}
+
+    .contact-modal.active {
+        display: flex;
+    }
+
+.contact-modal-box {
+    position: relative;
+    width: min(100%, 600px);
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    padding: clamp(28px, 5vw, 42px);
+    border-top: 4px solid var(--gold);
+    border-radius: 18px;
+    background: var(--primary-bg);
+    color: var(--white);
+    animation: modalSlideUp .28s ease;
+}
+
+.contact-close {
+    position: absolute;
+    top: 12px;
+    right: 18px;
+    border: 0;
+    background: transparent;
+    color: var(--white);
+    font-size: 32px;
+    cursor: pointer;
+}
+
+.contact-label {
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-size: 14px;
+}
+
+.contact-modal-box h2 {
+    margin: 10px 0 24px;
+}
+
+.contact-info p {
+    margin-bottom: 16px;
+    line-height: 1.7;
+}
+
+@keyframes modalSlideUp {
+    from {
+        opacity: 0;
+        transform: translateY(28px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* TABLET */
+@media (max-width: 1100px) {
+    :root {
+        --header-height: 96px;
+        --page-padding: clamp(22px, 4vw, 48px);
+    }
+
+    .main-logo {
+        height: 72px;
+    }
+
+    .nav-links {
+        gap: 19px;
+    }
+
+        .nav-links > li > a {
+            font-size: 14px;
+        }
+
+    .contact-btn {
+        padding-inline: 17px !important;
+    }
+
+    .industries-showcase {
+        grid-template-columns: 1fr;
+    }
+
+    .industries-content p {
+        max-width: 720px;
+    }
+
+    .lawyers-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lawyer-image {
+        height: 500px;
+    }
+
+    .footer-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* MOBILE NAVIGATION AND SMALL TABLETS */
+@media (max-width: 820px) {
+    :root {
+        --header-height: 82px;
+        --page-padding: 22px;
+    }
+
+    .navbar {
+        min-height: var(--header-height);
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .main-logo {
+        height: 60px;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+
+    .nav-wrapper {
+        position: fixed;
+        inset: var(--header-height) 0 0;
+        z-index: 1001;
+        display: block;
+        padding: 18px 20px 38px;
+        overflow-y: auto;
+        background: var(--primary-bg);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: transform .28s ease, opacity .28s ease, visibility .28s ease;
+    }
+
+        .nav-wrapper.is-open {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+    .nav-links {
+        width: min(100%, 620px);
+        margin: 0 auto;
+        display: block;
+    }
+
+        .nav-links > li {
+            border-bottom: 1px solid rgba(255, 255, 255, .1);
+        }
+
+            .nav-links > li > a {
+                width: 100%;
+                min-height: 58px;
+                justify-content: space-between;
+                font-size: 17px;
+                white-space: normal;
+            }
+
+    .nav-indicator {
+        display: none;
+    }
+
+    .contact-btn {
+        width: 100%;
+        margin: 18px 0 4px;
+    }
+
+    .mega-menu,
+    .mega-menu-about {
+        position: static;
+        width: 100%;
+        max-height: none;
+        margin: 0 0 18px;
+        padding: 0 16px 18px;
+        display: none;
+        grid-template-columns: 1fr;
+        gap: 18px;
+        overflow: visible;
+        border: 0;
+        border-left: 2px solid var(--gold);
+        border-radius: 0;
+        box-shadow: none;
+        background: transparent;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        transform: none;
+        transition: none;
+    }
+
+        .mega-menu::before {
+            display: none;
+        }
+
+    .has-mega-menu:hover > .mega-menu,
+    .has-mega-menu:focus-within > .mega-menu {
+        display: none;
+        transform: none;
+    }
+
+    .has-mega-menu.is-open > .mega-menu {
+        display: grid;
+    }
+
+    .has-mega-menu.is-open > .mega-menu-about {
+        display: block;
+    }
+
+    .mega-about-card p {
+        font-size: 15px;
+    }
+
+    .tagline-section {
+        min-height: auto;
+        padding-top: 84px;
+        padding-bottom: 84px;
+    }
+
+    .tagline-content h1 {
+        font-size: clamp(39px, 10vw, 58px);
+    }
+
+        .tagline-content h1 br,
+        .tagline-content p br {
+            display: none;
+        }
+
+    .industries-list {
+        grid-template-columns: 1fr;
+    }
+
+    .lawyer-overlay {
+        position: static;
+        min-height: 58px;
+        opacity: 1;
+        background: rgba(10, 16, 38, .65);
+    }
+
+        .lawyer-overlay a {
+            padding: 9px 19px;
+        }
+
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+/* PHONES */
+@media (max-width: 600px) {
+    :root {
+        --page-padding: 18px;
+    }
+
+    .main-logo {
+        height: 54px;
+    }
+
+    .tagline-content h1 {
+        font-size: clamp(35px, 11vw, 48px);
+        line-height: 1.13;
+    }
+
+    .tagline-content p {
+        font-size: 19px;
+    }
+
+    .industries-showcase,
+    .faq-section,
+    .lawyers-section {
+        padding-top: 68px;
+        padding-bottom: 68px;
+    }
+
+        .industries-content h2,
+        .faq-section > h2,
+        .section-header h2 {
+            font-size: 36px;
+        }
+
+    .industry-item {
+        min-height: 70px;
+        font-size: 17px;
+    }
+
+    .faq-item summary {
+        padding: 20px 52px 20px 19px;
+        font-size: 17px;
+    }
+
+    .faq-item p {
+        padding: 20px;
+        font-size: 15px;
+    }
+
+    .lawyers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lawyer-image {
+        height: min(118vw, 470px);
+    }
+
+    .lawyer-content {
+        min-height: auto;
+        padding: 22px;
+        text-align: center;
+    }
+
+        .lawyer-content::before {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .lawyer-content h3 {
+            font-size: 22px;
+        }
+
+    .footer-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        margin-top: 42px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+    }
+}
+/* =========================================
+   MOBILE NAVIGATION AND MEGA MENU FIX
+========================================= */
+
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 820px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        min-height: 82px;
+        padding: 12px 20px;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .main-logo {
+        height: 58px;
+        width: auto;
+    }
+
+    .nav-toggle {
+        width: 46px;
+        height: 46px;
+        padding: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-radius: 8px;
+        background: transparent;
+        cursor: pointer;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        z-index: 10002;
+    }
+
+        .nav-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+            border-radius: 10px;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .nav-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .nav-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .nav-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+    .nav-wrapper {
+        position: static;
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 82px;
+        left: 0;
+        width: 100%;
+        max-height: calc(100vh - 82px);
+        overflow-y: auto;
+        padding: 16px 20px 30px;
+        margin: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        background: var(--primary-bg);
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
+        z-index: 10000;
+    }
+
+        .nav-links.nav-open {
+            display: flex;
+        }
+
+        .nav-links > li {
+            width: 100%;
+            position: relative;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+            .nav-links > li > a {
+                width: 100%;
+                min-height: 54px;
+                padding: 16px 42px 16px 4px;
+                display: flex;
+                align-items: center;
+                color: #ffffff;
+                font-size: 17px;
+                text-decoration: none;
+                position: relative;
+            }
+
+            .nav-links > li.has-submenu > a::after {
+                content: "+";
+                position: absolute;
+                right: 8px;
+                top: 50%;
+                transform: translateY(-50%);
+                color: var(--gold);
+                font-size: 25px;
+                line-height: 1;
+            }
+
+            .nav-links > li.submenu-open > a::after {
+                content: "−";
+            }
+
+        .nav-links .contact-btn {
+            width: 100%;
+            margin: 14px 0 4px;
+            padding: 14px 20px !important;
+            justify-content: center;
+            text-align: center;
+        }
+
+    .nav-indicator {
+        display: none;
+    }
+
+    .mega-menu,
+    .mega-menu-about {
+        position: static;
+        top: auto;
+        left: auto;
+        width: 100%;
+        max-width: 100%;
+        max-height: 0;
+        padding: 0 16px;
+        margin: 0;
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 0;
+        overflow: hidden;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        background: rgba(255, 255, 255, 0.04);
+        transition: max-height 0.4s ease, padding 0.4s ease, margin 0.4s ease;
+    }
+
+    .nav-links > li.submenu-open > .mega-menu {
+        max-height: 1500px;
+        padding: 18px 16px;
+        margin-bottom: 12px;
+    }
+
+    .mega-column {
+        width: 100%;
+        margin-bottom: 16px;
+    }
+
+        .mega-column:last-child {
+            margin-bottom: 0;
+        }
+
+        .mega-column h3 {
+            margin-bottom: 8px;
+            font-size: 18px;
+        }
+
+        .mega-column a {
+            display: block;
+            width: 100%;
+            padding: 10px 0;
+            font-size: 16px;
+        }
+
+    .mega-about-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+        .mega-about-card p {
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+    .mega-about-highlight,
+    .MEGA-ABOUT-HIGHLIGHT {
+        margin-top: 16px;
+        padding: 16px;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    /* Disable desktop hover behavior on mobile */
+    .nav-links li:hover .mega-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+    }
+}
+
+/* ==================================================
+   IPHONE AND MOBILE NAVIGATION FIX
+================================================== */
+
+@media screen and (max-width: 820px) {
+
+    html,
+    body {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+        body.nav-open {
+            position: fixed;
+            inset: 0;
+            width: 100%;
+            overflow: hidden;
+        }
+
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 9999;
+        width: 100%;
+    }
+
+    .navbar {
+        position: relative;
+        width: 100%;
+        min-height: 82px;
+        padding: 10px 18px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .logo {
+        position: relative;
+        z-index: 10003;
+    }
+
+    .main-logo {
+        width: auto;
+        height: 56px;
+        max-width: 230px;
+    }
+
+    .nav-toggle {
+        position: relative;
+        z-index: 10003;
+        display: block;
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+    }
+
+    /*
+    The complete mobile menu panel
+    */
+
+    .nav-wrapper {
+        position: fixed !important;
+        top: 82px !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: calc(100dvh - 82px);
+        min-height: calc(100vh - 82px);
+        padding: 12px 18px calc(40px + env(safe-area-inset-bottom));
+        display: block !important;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        background: #111b39;
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateX(100%);
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        z-index: 10001;
+    }
+
+        .nav-wrapper.is-open {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateX(0);
+        }
+
+    .nav-links {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 0;
+        display: block;
+    }
+
+        .nav-links > li {
+            position: relative;
+            width: 100%;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+            .nav-links > li > a {
+                width: 100%;
+                min-height: 58px;
+                padding: 15px 6px;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                color: #ffffff;
+                font-size: 17px;
+                line-height: 1.3;
+                white-space: normal;
+            }
+
+    .nav-dropdown-trigger::after {
+        flex: 0 0 auto;
+        width: 9px;
+        height: 9px;
+        margin-right: 8px;
+        margin-left: 14px;
+    }
+
+    .has-mega-menu.is-open >
+    .nav-dropdown-trigger {
+        color: #d4a63f;
+    }
+
+    /*
+    Fully disable desktop hover behavior on touch view
+    */
+
+    .has-mega-menu:hover > .mega-menu,
+    .has-mega-menu:focus-within > .mega-menu {
+        display: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+    }
+
+    /*
+    Closed mobile mega menu
+    */
+
+    .mega-menu,
+    .mega-menu-about {
+        position: static !important;
+        inset: auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        display: none !important;
+        grid-template-columns: 1fr !important;
+        gap: 18px !important;
+        overflow: visible !important;
+        border: 0 !important;
+        border-left: 2px solid #d4a63f !important;
+        border-radius: 0 !important;
+        background: rgba(255, 255, 255, 0.035) !important;
+        box-shadow: none !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    /*
+    Open mobile mega menu
+    */
+
+    .has-mega-menu.is-open > .mega-menu {
+        display: grid !important;
+        padding: 16px !important;
+        margin: 0 0 14px !important;
+    }
+
+    .has-mega-menu.is-open >
+    .mega-menu-about {
+        display: block !important;
+        padding: 16px !important;
+        margin: 0 0 14px !important;
+    }
+
+    .mega-menu::before {
+        display: none !important;
+    }
+
+    .mega-column {
+        width: 100%;
+    }
+
+        .mega-column h3,
+        .mega-about-label {
+            margin-bottom: 9px;
+            color: #d4a63f;
+            font-size: 18px;
+        }
+
+        .mega-column a {
+            width: 100%;
+            padding: 11px 0;
+            display: block;
+            color: rgba(255, 255, 255, 0.86);
+            font-size: 16px;
+        }
+
+    .mega-about-card {
+        width: 100%;
+        max-width: 100%;
+    }
+
+        .mega-about-card p {
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+    .mega-about-highlight,
+    .MEGA-ABOUT-HIGHLIGHT {
+        margin-top: 18px;
+        padding: 15px;
+        color: #ffffff;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .contact-btn {
+        width: 100%;
+        margin: 18px 0 6px;
+        padding: 14px 20px !important;
+        justify-content: center !important;
+    }
+
+    .nav-indicator {
+        display: none !important;
+    }
+}
+
+/* ==================================================
+   LAWYER CARDS ON TOUCH DEVICES
+================================================== */
+
+@media screen and (max-width: 820px) {
+
+    .lawyer-card {
+        position: relative;
+        transform: none;
+    }
+
+        .lawyer-card:hover,
+        .lawyer-card:focus-within {
+            transform: none;
+        }
+
+    .lawyer-image {
+        position: relative;
+        display: block;
+        overflow: hidden;
+    }
+
+        .lawyer-image img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+    /*
+    Keep the View Profile button centered
+    at the bottom of the image.
+    */
+
+    .lawyer-overlay {
+        position: absolute !important;
+        top: auto !important;
+        right: 0 !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        min-height: 76px;
+        padding: 12px 16px;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        background: linear-gradient( to top, rgba(10, 16, 38, 0.96), rgba(10, 16, 38, 0.72), transparent );
+        opacity: 1 !important;
+        visibility: visible !important;
+        pointer-events: auto !important;
+        transform: none !important;
+    }
+
+        .lawyer-overlay a {
+            position: relative;
+            left: auto;
+            right: auto;
+            min-width: 145px;
+            margin: 0 auto;
+            padding: 11px 22px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #d4a63f;
+            border-radius: 999px;
+            background: #d4a63f;
+            color: #111b39;
+            font-size: 16px;
+            font-weight: 700;
+            text-align: center;
+            text-decoration: none;
+        }
+
+    .lawyer-card:hover .lawyer-overlay,
+    .lawyer-card:focus-within .lawyer-overlay {
+        opacity: 1 !important;
+    }
+
+    .lawyer-card:hover .lawyer-image img,
+    .lawyer-card:focus-within .lawyer-image img {
+        transform: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .lawyers-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .lawyer-image {
+        height: min(118vw, 470px);
+    }
+
+    .lawyer-content {
+        padding: 22px 18px;
+        text-align: center;
+    }
+
+        .lawyer-content::before {
+            margin-right: auto;
+            margin-left: auto;
+        }
+}
